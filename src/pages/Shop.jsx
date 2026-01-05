@@ -3,12 +3,23 @@ import { motion } from 'framer-motion';
 import { Filter } from 'lucide-react';
 
 const products = [
-    { id: 1, name: "Lavender Bouquet", price: "₹1,200", category: "Flowers", image: "💐" },
-    { id: 2, name: "Chunky Bee Plushie", price: "₹850", category: "Plushies", image: "🐝" },
-    { id: 3, name: "Sunflower Keychain", price: "₹250", category: "Keychains", image: "🌻" },
-    { id: 4, name: "Tulip Pot", price: "₹1,500", category: "Flowers", image: "🌷" },
-    { id: 5, name: "Custom Doll", price: "₹2,000", category: "Custom", image: "🎎" },
-    { id: 6, name: "Avocado Plush", price: "₹650", category: "Plushies", image: "🥑" },
+    { id: 1, name: "Strawberry Collection Set", price: "₹1,850", category: "Sets", image: "/products/strawberry-collection.jpg" }, // Updated
+    { id: 2, name: "Forever Flower Box", price: "₹2,499", category: "Gift Boxes", image: "/products/flower-bouquet-box.jpg" }, // Updated
+    { id: 3, name: "Heart Pouch", price: "₹550", category: "Accessories", image: "/products/heart-pouch.jpg" }, // Updated
+    { id: 4, name: "Little Turtle Friend", price: "₹650", category: "Plushies", image: "/products/turtle-plushie.jpg" }, // Updated
+    { id: 5, name: "Strawberry Drawstring", price: "₹750", category: "Accessories", image: "/products/strawberry-pouch.jpg" }, // Updated
+    { id: 6, name: "Lavender Bow", price: "₹350", category: "Accessories", image: "/products/purple-bow.jpg" },
+    { id: 7, name: "Cloud Pouch", price: "₹650", category: "Accessories", image: "/products/cloud-pouch.jpg" },
+    { id: 8, name: "White Lily", price: "₹800", category: "Flowers", image: "/products/white-lily.jpg" },
+    { id: 9, name: "Red Blossom Clip", price: "₹200", category: "Accessories", image: "/products/red-flower-clip.jpg" },
+    { id: 11, name: "Cream Flower & Bow Set", price: "₹450", category: "Accessories", image: "/products/cream-bow-set.jpg" },
+    { id: 12, name: "Hanging Turtle Keychain", price: "₹300", category: "Keychains", image: "/products/turtle-keychain.jpg" },
+    { id: 13, name: "Red Heart Keychain", price: "₹250", category: "Keychains", image: "/products/heart-keychain.jpg" },
+    { id: 14, name: "Sunflower Keychain", price: "₹250", category: "Keychains", image: "/products/sunflower-keychain.jpg" },
+    { id: 15, name: "Tulip & Heart Charm", price: "₹350", category: "Keychains", image: "/products/tulip-heart-keychain.jpg" },
+    { id: 16, name: "Daisy Crop Top", price: "₹1,500", category: "Clothing", image: "/products/daisy-crop-top.jpg" },
+    { id: 17, name: "Sunflower Coaster", price: "₹150", category: "Home Decor", image: "/products/sunflower-coaster.jpg" },
+    { id: 18, name: "Sunflower Bookmark", price: "₹200", category: "Accessories", image: "/products/sunflower-bookmark.jpg" },
 ];
 
 const Shop = () => {
@@ -32,8 +43,12 @@ const Shop = () => {
                         animate={{ opacity: 1, scale: 1 }}
                         className="group bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all overflow-hidden border border-transparent hover:border-warmBeige/50"
                     >
-                        <div className="h-64 bg-cream flex items-center justify-center text-8xl group-hover:bg-lavender/10 transition-colors relative">
-                            {product.image}
+                        <div className="h-64 bg-cream flex items-center justify-center group-hover:bg-lavender/10 transition-colors relative overflow-hidden">
+                            {product.image.startsWith('/') ? (
+                                <img src={product.image} alt={product.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                            ) : (
+                                <span className="text-8xl">{product.image}</span>
+                            )}
                             {product.category === "Custom" && (
                                 <span className="absolute top-4 right-4 bg-white/80 backdrop-blur px-2 py-1 rounded-md text-xs font-bold text-softBrown uppercase tracking-wider">
                                     Custom

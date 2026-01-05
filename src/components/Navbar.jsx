@@ -10,8 +10,9 @@ const Navbar = () => {
         <nav className="sticky top-0 z-50 bg-cream/80 backdrop-blur-md shadow-sm border-b border-warmBeige/30">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
-                    <Link to="/" className="text-2xl font-heading font-bold text-softBrown">
-                        Crothira Looms 🧶
+                    <Link to="/" className="text-2xl font-heading font-bold text-softBrown flex items-center gap-2">
+                        <img src="/logo.jpg" alt="Crothira Looms" className="h-12 w-auto object-contain rounded-full" />
+                        <span>Crothira Looms 🧶</span>
                     </Link>
 
                     {/* Desktop Menu */}
